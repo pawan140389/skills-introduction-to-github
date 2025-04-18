@@ -82,6 +82,7 @@ jobs:
           fi
 
           # Check if a pull request description exists
+
           if [ "${{ github.event.pull_request.body }}" == "This is my github profile" ]; then
             checks=$(echo $checks | jq '.pr_description.passed = false')
             checks=$(echo $checks | jq '.pr_description.message = "Empty pull request description"')
