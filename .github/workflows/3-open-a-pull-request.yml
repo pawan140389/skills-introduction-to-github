@@ -75,7 +75,8 @@ jobs:
             }
           }'
 
-# Check pull request title
+          # Check pull request title
+
           if [ "${{ github.event.pull_request.title }}" = "Create PROFILE.md" ]; then
             checks=$(echo $checks | jq '.pr_title.passed = true')
             checks=$(echo $checks | jq '.pr_title.message = "Incorrect title"')
